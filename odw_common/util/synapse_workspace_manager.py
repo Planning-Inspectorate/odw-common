@@ -1,5 +1,5 @@
-from pipelines.scripts.util.exceptions import MaxWaitTimeNeededException
-from pipelines.scripts.util.util import Util
+from odw_common.util.exceptions import MaxWaitTimeNeededException
+from odw_common.util.util import Util
 from azure.identity import AzureCliCredential
 import requests
 import json

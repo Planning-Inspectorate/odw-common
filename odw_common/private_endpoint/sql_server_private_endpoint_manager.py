@@ -1,4 +1,4 @@
-from pipelines.scripts.private_endpoint.private_endpoint_manager import PrivateEndpointManager
+from odw_common.private_endpoint.private_endpoint_manager import PrivateEndpointManager
 
 
 class SSQLServerPrivateEndpointManager(PrivateEndpointManager):
