@@ -11,10 +11,10 @@ dynamic = [ "version" ]
 python = "~=3.10"
 
 [tool.poetry]
-name = "pipelines/scripts"
+name = "pipelines"
 version = "1.0.0"
 description = "Common scripts used in CICD processes"
-packages = [{include = "pipelines/pipelines/scripts"}]
+packages = [{include = "pipelines"}]
 authors = [
     "Harrison Boyle-Thomas"
 ]
