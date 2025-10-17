@@ -5,9 +5,6 @@ build-backend = "poetry.core.masonry.api"
 [project]
 readme = "readme.md"
 dynamic = [ "version" ]
-authors = [
-    {name = "Harrison Boyle-Thomas"}
-]
 
 [tool.poetry.dependencies]
 python = "~=3.10"
@@ -16,6 +13,9 @@ python = "~=3.10"
 name = "pipelines/scripts"
 version = "1.0.0"
 description = "Common scripts used in CICD processes"
+authors = [
+    "Harrison Boyle-Thomas"
+]
 
 [tool.ruff]
 # Exclude a variety of commonly ignored directories.
