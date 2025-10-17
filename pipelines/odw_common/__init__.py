@@ -1,1 +1,1 @@
-from scripts import *
+from pipelines.scripts import *
