@@ -21,6 +21,9 @@ packages = [{include = "pipelines/scripts"}]
 exclude = [
     "pipelines/scripts/test"
 ]
+authors = [
+    "Harrison Boyle-Thomas"
+]
 
 [tool.ruff]
 # Exclude a variety of commonly ignored directories.
