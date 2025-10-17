@@ -1,5 +1,5 @@
 import sys
-from pipelines.scripts import *
+from scripts import *
 
 
-sys.modules[__name__] = sys.modules["pipelines.scripts"]
+sys.modules[__name__] = sys.modules["scripts"]
