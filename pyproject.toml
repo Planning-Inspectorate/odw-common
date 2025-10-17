@@ -2,11 +2,6 @@
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[project]
-name = "odw_common"
-readme = "readme.md"
-dynamic = [ "version" ]
-
 [tool.poetry.dependencies]
 python = "~=3.10"
 
@@ -14,7 +9,7 @@ python = "~=3.10"
 name = "odw_common"
 version = "1.0.0"
 description = "Common scripts used in CICD processes"
-packages = [{include = "pipelines"}]
+packages = [{include = "pipelines/scripts"}]
 authors = [
     "Harrison Boyle-Thomas"
 ]
