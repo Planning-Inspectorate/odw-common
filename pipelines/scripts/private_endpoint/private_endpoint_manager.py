@@ -1,6 +1,6 @@
 from typing import List, Dict, Any, Iterable
 from abc import ABC, abstractmethod
-from pipelines.scripts.util import Util
+from pipelines.scripts.util.util import Util
 import logging
 import json
 

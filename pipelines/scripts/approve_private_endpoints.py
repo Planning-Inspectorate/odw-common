@@ -2,7 +2,7 @@ from pipelines.scripts.private_endpoint.synapse_private_endpoint_manager import 
 from pipelines.scripts.private_endpoint.key_vault_private_endpoint_manager import KeyVaultPrivateEndpointManager
 from pipelines.scripts.private_endpoint.storage_private_endpoint_manager import StoragePrivateEndpointManager
 from pipelines.scripts.private_endpoint.service_bus_private_endpoint_manager import ServiceBusPrivateEndpointManager
-from pipelines.scripts.util import Util
+from pipelines.scripts.util.util import Util
 import argparse
 import logging
 import os
