@@ -9,7 +9,7 @@ python = "~=3.10"
 name = "odw_common"
 version = "1.0.0"
 description = "Common scripts used in CICD processes"
-packages = [{include = "odw_common", from = "pipelines"}]
+packages = [{include = "odw_common"}]
 authors = [
     "Harrison Boyle-Thomas"
 ]
