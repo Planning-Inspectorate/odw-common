@@ -13,7 +13,7 @@ authors = [
 python = "~=3.10"
 
 [tool.poetry]
-name = "pipelines/scripts/odw"
+name = "pipelines/scripts"
 version = "1.0.0"
 description = "Common scripts used in CICD processes"
 readme = "readme.md"
