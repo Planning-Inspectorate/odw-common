@@ -1,0 +1,61 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[project]
+name = "odw_common"
+dynamic = [ "version" ]
+authors = []
+
+[tool.poetry.dependencies]
+python = "~=3.10"
+
+[tool.poetry]
+name = "pipelines/scripts/odw"
+version = "1.0.0"
+description = "Common scripts used in CICD processes"
+readme = "readme.md"
+packages = [{include = "pipelines/scripts"}]
+exclude = [
+    "pipelines/scripts/test"
+]
+
+[tool.ruff]
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+]
+
+line-length = 150
+indent-width = 4
+target-version = "py310"
+
+[tool.ruff.format]
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
