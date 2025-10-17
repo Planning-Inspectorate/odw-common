@@ -3,6 +3,7 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [project]
+name = "odw_common"
 readme = "readme.md"
 dynamic = [ "version" ]
 
@@ -10,7 +11,6 @@ dynamic = [ "version" ]
 python = "~=3.10"
 
 [tool.poetry]
-name = "odw_common"
 version = "1.0.0"
 description = "Common scripts used in CICD processes"
 packages = [{include = "pipelines"}]
