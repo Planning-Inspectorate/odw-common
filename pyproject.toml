@@ -6,10 +6,10 @@ build-backend = "poetry.core.masonry.api"
 python = "~=3.10"
 
 [tool.poetry]
-name = "scripts"
+name = "odw_common"
 version = "1.0.0"
 description = "Common scripts used in CICD processes"
-packages = [{include = "scripts", from = "pipelines"}]
+packages = [{include = "odw_common", from = "pipelines"}]
 authors = [
     "Harrison Boyle-Thomas"
 ]
