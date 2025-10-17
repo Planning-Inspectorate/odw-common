@@ -6,7 +6,7 @@ build-backend = "poetry.core.masonry.api"
 python = "~=3.10"
 
 [tool.poetry]
-name = "odw_common"
+name = "scripts"
 version = "1.0.0"
 description = "Common scripts used in CICD processes"
 packages = [{include = "odw_common", from = "pipelines"}]
