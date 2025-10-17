@@ -10,7 +10,7 @@ dynamic = [ "version" ]
 python = "~=3.10"
 
 [tool.poetry]
-name = "pipelines/scripts"
+name = "odw_common"
 version = "1.0.0"
 description = "Common scripts used in CICD processes"
 authors = [
