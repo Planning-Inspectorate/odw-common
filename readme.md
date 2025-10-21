@@ -60,3 +60,12 @@ Some of the key resources used in the deployment are:
 | ADLS Storage Account | Hierarchical namespace enabled Storage Account to act as a data lake |
 | Key Vault | Secrets storage for connection strings, password, etc for connected services |
 | Log Analytics | Activity and metric diagnostic log storage with querying capabilities using KQL |
+
+
+# Python scripts
+This repo contains a package called `odw_common`, which includes generic functionality that can be used across the other repos of the ODW. This primarily contains scripts used for CICD, however it can also include other pieces of useful code if needed.
+
+Code from this repo can be imported through the below steps
+1. Install the package locally with pip: `python3 -m pip install "git+ssh://git@github.com/Planning-Inspectorate/odw-common.git@main"`
+    - You may also optionally use a different branch. Be aware that if the package is ever updated, you must manually uninstall the packages and reinstall
+2. Import the code in Python using `from odw_common.path.to.my.file import some_thing`
