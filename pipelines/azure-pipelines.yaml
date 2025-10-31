@@ -4,7 +4,7 @@ name: ODW Common component CI
 parameters:
 # User-specified environment to deploy to
 - name: env
-  default: 'build'
+  default: 'test'
   values:
   - 'build'
   - 'dev'
