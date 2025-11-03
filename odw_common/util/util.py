@@ -10,6 +10,10 @@ class Util:
         Class that has useful utility functions
     """
     @classmethod
+    def test_function_2452(self):
+        print("New function is being called, installation working as expected")
+
+    @classmethod
     def run_az_cli_command(cls, args: List[str]):
         """
             Run an az cli command. Raises a `RuntimeException` if something goes wrong
