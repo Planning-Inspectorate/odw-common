@@ -69,3 +69,5 @@ Code from this repo can be imported through the below steps
 1. Install the package locally with pip: `python3 -m pip install "git+ssh://git@github.com/Planning-Inspectorate/odw-common.git@main"`
     - You may also optionally use a different branch. Be aware that if the package is ever updated, you must manually uninstall the packages and reinstall
 2. Import the code in Python using `from odw_common.path.to.my.file import some_thing`
+
+*IMPORTANT* After merging a new Python change in this repo, you MUST reapply the ADO agent config to each environment in order for the other CICD pipelines to pick up the change
