@@ -69,7 +69,7 @@ class SynapseWorkspaceManager():
             )
         )
         package_name = package_path.replace("dist/", "")
-        max_wait_time = 5 * 60 # Wait 5 minutes
+        max_wait_time = 10 * 60 # Wait 10 minutes
         current_wait_time = 0
         retry_delay_seconds = 20
         while current_wait_time < max_wait_time:
@@ -102,7 +102,7 @@ class SynapseWorkspaceManager():
                 "-y"
             ]
         )
-        max_wait_time = 10 * 60 # Wait 10 minutes
+        max_wait_time = 20 * 60 # Wait 20 minutes
         current_wait_time = 0
         retry_delay_seconds = 20
         while current_wait_time < max_wait_time:
@@ -152,7 +152,7 @@ class SynapseWorkspaceManager():
         if not resp_json:
             raise ValueError(f"http endpoint did not respond with a json object. Received {resp}")
         # Need to wait for the spark pool to exit provisioning state
-        max_wait_time = 50 * 60 # Wait 50 minutes, this is a slow operation
+        max_wait_time = 60 * 60 # Wait 60 minutes, this is a slow operation
         current_wait_time = 0
         retry_delay_seconds = 60
         while current_wait_time < max_wait_time:
