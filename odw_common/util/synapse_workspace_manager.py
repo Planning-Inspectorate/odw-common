@@ -132,6 +132,23 @@ class SynapseWorkspaceManager():
             pass
         raise ValueError(f"http endpoint did not respond with a json object. Received {resp}")
 
+    def get_all_spark_pools(self) -> List[Dict[str, Any]]:
+        """
+            Return the json for all spark pools. An exception is raised if there is an error with the request
+        """
+        resp = requests.Response = requests.get(
+            f"{self.ENDPOINT}/bigDataPools?api-version=2021-06-01",
+            headers={"Authorization": f"Bearer {self._get_token()}"}
+        )
+        try:
+            resp = resp.json()
+            if "error" in resp:
+                raise ValueError(f"A http exception was raised when calling get_spark_pool(): {json.dumps(resp, indent=4)}")
+            return resp["value"]
+        except json.JSONDecodeError:
+            pass
+        raise ValueError(f"http endpoint did not respond with a json object. Received {resp}")
+
     def update_spark_pool(self, spark_pool_name: str, spark_pool_json: Dict[str, Any]):
         """
             Update the given spark pool with the given json
