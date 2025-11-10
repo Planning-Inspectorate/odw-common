@@ -79,7 +79,10 @@ class SynapseWorkspaceManager():
                     return resp
             current_wait_time += retry_delay_seconds
             time.sleep(retry_delay_seconds)
-        raise MaxWaitTimeNeededException(f"Exceeded max wait time of {max_wait_time} seconds for creation of workspace package '{package_name}'")
+        raise MaxWaitTimeNeededException(
+            f"Exceeded max wait time of {max_wait_time} seconds for creation of workspace package '{package_name}'. "
+            f"The last response from Synapse yielded: {json.dumps(workspace_package_names, indent=4)}"
+        )
 
     def remove_workspace_package(self, package_name: str):
         """
@@ -111,7 +114,10 @@ class SynapseWorkspaceManager():
                 return
             current_wait_time += retry_delay_seconds
             time.sleep(retry_delay_seconds)
-        raise MaxWaitTimeNeededException(f"Exceeded max wait time of {max_wait_time} seconds for deletion of workspace package '{package_name}'")
+        raise MaxWaitTimeNeededException(
+            f"Exceeded max wait time of {max_wait_time} seconds for deletion of workspace package '{package_name}'. "
+            f"The last response from Synapse yielded: {json.dumps(workspace_package_names, indent=4)}"
+        )
 
     def get_spark_pool(self, spark_pool_name: str) -> Dict[str, Any]:
         """
@@ -184,4 +190,7 @@ class SynapseWorkspaceManager():
                 )
             current_wait_time += retry_delay_seconds
             time.sleep(retry_delay_seconds)
-        raise MaxWaitTimeNeededException(f"Exceeded max wait time of {max_wait_time} seconds for spark pool update for spark pool '{spark_pool_name}'")
+        raise MaxWaitTimeNeededException(
+            f"Exceeded max wait time of {max_wait_time} seconds for spark pool update for spark pool '{spark_pool_name}'. "
+            f"The last response from Synapse yielded: {json.dumps(spark_pool, indent=4)}"
+        )
