@@ -69,7 +69,7 @@ class SynapseWorkspaceManager():
             )
         )
         package_name = package_path.replace("dist/", "")
-        max_wait_time = 10 * 60 # Wait 10 minutes
+        max_wait_time = 15 * 60 # Wait 15 minutes
         current_wait_time = 0
         retry_delay_seconds = 20
         while current_wait_time < max_wait_time:
@@ -79,7 +79,7 @@ class SynapseWorkspaceManager():
                     return resp
             current_wait_time += retry_delay_seconds
             time.sleep(retry_delay_seconds)
-        raise MaxWaitTimeNeededException(f"Exceeded max wait time for creation of workspace package '{package_name}'")
+        raise MaxWaitTimeNeededException(f"Exceeded max wait time of {max_wait_time} seconds for creation of workspace package '{package_name}'")
 
     def remove_workspace_package(self, package_name: str):
         """
@@ -111,7 +111,7 @@ class SynapseWorkspaceManager():
                 return
             current_wait_time += retry_delay_seconds
             time.sleep(retry_delay_seconds)
-        raise MaxWaitTimeNeededException(f"Exceeded max wait time for deletion of workspace package '{package_name}'")
+        raise MaxWaitTimeNeededException(f"Exceeded max wait time of {max_wait_time} seconds for deletion of workspace package '{package_name}'")
 
     def get_spark_pool(self, spark_pool_name: str) -> Dict[str, Any]:
         """
@@ -184,4 +184,4 @@ class SynapseWorkspaceManager():
                 )
             current_wait_time += retry_delay_seconds
             time.sleep(retry_delay_seconds)
-        raise MaxWaitTimeNeededException(f"Exceeded max wait time for spark pool update for spark pool '{spark_pool_name}'")
+        raise MaxWaitTimeNeededException(f"Exceeded max wait time of {max_wait_time} seconds for spark pool update for spark pool '{spark_pool_name}'")
