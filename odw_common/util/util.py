@@ -83,6 +83,25 @@ class Util:
         ]
     
     @classmethod
+    def get_odw_service_buses(cls, env: str) -> Dict[str, Any]:
+        """
+            Return the details of all ODW service bus namespaces
+        """
+        resource_group = f"pins-rg-ingestion-odw-{env}-uks"
+        command = f"az servicebus namespace list -g {resource_group}"
+        return json.loads(cls.run_az_cli_command(command.split(" ")))
+    
+    @classmethod
+    def get_odw_service_bus_names(cls, env: str) -> List[str]:
+        """
+            Return the names of all ODW service bus namespaces
+        """
+        return [
+            service_bus["name"]
+            for service_bus in cls.get_odw_service_buses(env)
+        ]
+    
+    @classmethod
     def get_all_artifact_paths(cls, artifact_paths: List[str]) -> List[str]:
         """
             Return the paths to all artifacts under the given paths
