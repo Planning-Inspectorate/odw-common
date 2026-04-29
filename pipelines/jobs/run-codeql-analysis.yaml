@@ -32,7 +32,7 @@ jobs:
             --language=${{ parameters.language }} \
             --source-root=$(Build.SourcesDirectory) \
             --verbose
-        displayName: 'Initialize CodeQL Database'
+        displayName: 'Initialise CodeQL Database'
 
       # Run CodeQL analysis
       - script: |
