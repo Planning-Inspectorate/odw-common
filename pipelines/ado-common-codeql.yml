@@ -24,6 +24,6 @@ variables:
   language: 'python'
 
 stages:
-- template: pipelines/stages/run-codeql-analysis.yaml
+- template: stages/run-codeql-analysis.yaml
   parameters:
     language: ${{ variables.language }}
