@@ -1,0 +1,13 @@
+parameters:
+  language: 'python'
+
+##
+# Run CodeQL analysis for source code
+##
+stages:
+- stage: CodeQLAnalysis
+  displayName: 'CodeQL Analysis'
+  jobs:
+  - template: ${{ variables['System.DefaultWorkingDirectory'] }}/pipelines/jobs/run-codeql-analysis.yaml
+    parameters:
+      language: ${{ parameters.language }}

@@ -1,0 +1,29 @@
+trigger:
+  branches:
+    include:
+      - main
+      - feat
+
+pr:
+  branches:
+    include:
+      - main
+      - feat
+
+schedules:
+- cron: "21 19 * * 0"
+  displayName: Weekly CodeQL Scan
+  branches:
+    include:
+      - main
+  always: true
+
+pool: pins-agent-pool-odw-build-uks
+
+variables:
+  language: 'python'
+
+stages:
+- template: stages/run-codeql-analysis.yaml
+  parameters:
+    language: ${{ variables.language }}
