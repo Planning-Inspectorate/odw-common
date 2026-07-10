@@ -1,0 +1,48 @@
+schedules:
+  - cron: "0 0 * * *"
+    displayName: Daily stale PR cleanup
+    branches:
+      include:
+        - main
+    always: true
+
+# only run on schedule
+pr: none
+trigger: none
+
+pool: pins-agent-pool-odw-build-uks
+
+variables:
+  - group: GitHub-Secrets
+
+stages:
+  - stage: CleanupStalePRs
+    displayName: Check for Stale PRs
+    jobs:
+      - job: CloseStalePRs
+        displayName: Close Stale PRs
+        steps:
+          - template: templates/github/close-stale-prs.yml
+            parameters:
+              githubRepository: 'Planning-Inspectorate/odw-azure-functions'
+              staleThresholdDays: 14
+              closureThresholdDays: 21
+              variableGroupName: 'GitHub-Secrets'
+          - template: templates/github/close-stale-prs.yml
+            parameters:
+              githubRepository: 'Planning-Inspectorate/odw-synapse-workspace'
+              staleThresholdDays: 14
+              closureThresholdDays: 21
+              variableGroupName: 'GitHub-Secrets'
+          - template: templates/github/close-stale-prs.yml
+            parameters:
+              githubRepository: 'Planning-Inspectorate/odw-azure-functions'
+              staleThresholdDays: 14
+              closureThresholdDays: 21
+              variableGroupName: 'GitHub-Secrets'
+          - template: templates/github/close-stale-prs.yml
+            parameters:
+              githubRepository: 'Planning-Inspectorate/odw-infrastructure'
+              staleThresholdDays: 14
+              closureThresholdDays: 21
+              variableGroupName: 'GitHub-Secrets'
