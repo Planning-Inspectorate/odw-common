@@ -55,4 +55,4 @@ steps:
 
     env:
       GITHUB_TOKEN: $(GITHUB_TOKEN)
-    displayName: Close stale PRs
+    displayName: Close stale PRs - ${{ parameters.githubRepository }}
