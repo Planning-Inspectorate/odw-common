@@ -11,15 +11,17 @@ parameters:
   - 'test'
   - 'prod'
 
-# Run when Pull Request raised to the main branch
+# Run when Pull Request raised to main or a release branch
 pr:
 - main
+- release/*
 
-# Run when merged into main
+# Run when merged into main or a release branch
 trigger:
  branches:
   include:
   - main
+  - release/*
 
 variables:
 
